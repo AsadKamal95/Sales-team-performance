@@ -6,7 +6,17 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, PromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 
-df = pd.read_csv("sales_performance_data.csv")
+def load_data(path):
+    if path.endswith('.csv'):
+        df = pd.read_csv(path)
+        return df
+    elif path.endswith('.json'):
+        df = pd.read_json(path)
+        return df
+    else:
+        return "Only the files that end with .csv or .json are accepted"
+
+df = load_data("sales_performance_data.csv")
 
 load_dotenv()
 llm = ChatOpenAI(model="gpt-4o-mini")
