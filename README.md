@@ -1,6 +1,7 @@
 # Sales-team-performance
 ## To run this code you need to download the required dependencies
 - In terminal write pip install -r requirements.txt
+- Create a .env file and add the openAI's api key. (OPENAI_API_KEY=[Your API key])
 - It's a good practice to create a virtual environment for your projects, you can create one using the following command prompt
 - python3 -m venv [environment name]
 You need to run the main.py using the following command
